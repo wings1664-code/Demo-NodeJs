@@ -1,0 +1,22 @@
+<%- include('../layout') %>
+<h1>Add Product</h1>
+<form action="/products/add" method="POST">
+  <label>Name:</label>
+  <input type="text" name="name" required>
+  <label>Price:</label>
+  <input type="number" name="price" step="0.01" required>
+  <label>Category:</label>
+  <select name="categoryId" required>
+    <% categories.forEach(category => { %>
+      <option value="<%= category.id || category._id %>"><%= category.name %></option>
+    <% }) %>
+  </select>
+  <label>Subcategory:</label>
+  <select name="subcategoryId" required>
+    <% subcategories.forEach(subcategory => { %>
+      <option value="<%= subcategory.id || subcategory._id %>"><%= subcategory.name %></option>
+    <% }) %>
+  </select>
+  <button type="submit">Add</button>
+</form>
+<a href="/products/list">Back to List</a>

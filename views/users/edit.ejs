@@ -1,0 +1,12 @@
+<%- include('../layout') %>
+<h1>Edit User</h1>
+<form action="/users/edit/<%= user.id || user._id %>" method="POST">
+  <label>Username:</label>
+  <input type="text" name="username" value="<%= user.username %>" required>
+  <label>Email:</label>
+  <input type="email" name="email" value="<%= user.email %>" required>
+  <label>Password (leave blank to keep unchanged):</label>
+  <input type="password" name="password">
+  <button type="submit">Update</button>
+</form>
+<a href="/users/list">Back to List</a>

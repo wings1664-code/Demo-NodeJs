@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecommerce Management</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h1 { color: #333; }
+    ul { list-style-type: none; padding: 0; }
+    li { margin: 10px 0; }
+    a { margin-right: 10px; text-decoration: none; color: #007BFF; }
+    a:hover { text-decoration: underline; }
+    form { margin-top: 20px; }
+    label { display: block; margin: 5px 0; }
+    input, select { margin-bottom: 10px; padding: 5px; width: 200px; }
+    button { padding: 5px 10px; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/users/list">Users</a> |
+    <a href="/categories/list">Categories</a> |
+    <a href="/subcategories/list">Subcategories</a> |
+    <a href="/products/list">Products</a> |
+    <a href="/users/login-view">Login</a> |
+    <a href="/users/add">Register</a>
+  </nav>
+  <hr>
+  <%- body %>
+</body>
+</html>

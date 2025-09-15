@@ -1,0 +1,14 @@
+<%- include('../layout') %>
+<h1>Users</h1>
+<a href="/users/add">Add User</a>
+<ul>
+  <% users.forEach(user => { %>
+    <li>
+      <%= user.username %> (<%= user.email %>)
+      <a href="/users/edit/<%= user.id || user._id %>">Edit</a>
+      <form action="/users/<%= user.id || user._id %>?_method=DELETE" method="POST" style="display:inline;">
+        <button type="submit">Delete</button>
+      </form>
+    </li>
+  <% }) %>
+</ul>

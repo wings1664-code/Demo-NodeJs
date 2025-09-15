@@ -1,0 +1,14 @@
+<%- include('../layout') %>
+<h1>Edit Subcategory</h1>
+<form action="/subcategories/edit/<%= subcategory.id || subcategory._id %>" method="POST">
+  <label>Name:</label>
+  <input type="text" name="name" value="<%= subcategory.name %>" required>
+  <label>Category:</label>
+  <select name="categoryId" required>
+    <% categories.forEach(category => { %>
+      <option value="<%= category.id || category._id %>" <%= (category.id || category._id).toString() === (subcategory.categoryId.id || subcategory.categoryId._id || subcategory.categoryId).toString() ? 'selected' : '' %>><%= category.name %></option>
+    <% }) %>
+  </select>
+  <button type="submit">Update</button>
+</form>
+<a href="/subcategories/list">Back to List</a>

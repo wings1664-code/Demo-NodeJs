@@ -1,0 +1,14 @@
+<%- include('../layout') %>
+<h1>Products</h1>
+<a href="/products/add">Add Product</a>
+<ul>
+  <% products.forEach(product => { %>
+    <li>
+      <%= product.name %> (Price: <%= product.price %>, Category: <%= product.categoryId.name || product.categoryId %>, Subcategory: <%= product.subcategoryId.name || product.subcategoryId %>)
+      <a href="/products/edit/<%= product.id || product._id %>">Edit</a>
+      <form action="/products/<%= product.id || product._id %>?_method=DELETE" method="POST" style="display:inline;">
+        <button type="submit">Delete</button>
+      </form>
+    </li>
+  <% }) %>
+</ul>

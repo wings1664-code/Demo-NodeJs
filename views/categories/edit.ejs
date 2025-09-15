@@ -1,0 +1,8 @@
+<%- include('../layout') %>
+<h1>Edit Category</h1>
+<form action="/categories/edit/<%= category.id || category._id %>" method="POST">
+  <label>Name:</label>
+  <input type="text" name="name" value="<%= category.name %>" required>
+  <button type="submit">Update</button>
+</form>
+<a href="/categories/list">Back to List</a>

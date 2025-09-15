@@ -1,0 +1,14 @@
+<%- include('../layout') %>
+<h1>Subcategories</h1>
+<a href="/subcategories/add">Add Subcategory</a>
+<ul>
+  <% subcategories.forEach(subcategory => { %>
+    <li>
+      <%= subcategory.name %> (Category: <%= subcategory.categoryId.name || subcategory.categoryId %>)
+      <a href="/subcategories/edit/<%= subcategory.id || subcategory._id %>">Edit</a>
+      <form action="/subcategories/<%= subcategory.id || subcategory._id %>?_method=DELETE" method="POST" style="display:inline;">
+        <button type="submit">Delete</button>
+      </form>
+    </li>
+  <% }) %>
+</ul>
